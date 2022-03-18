@@ -1,2 +1,48 @@
 오늘 배운것 입니다. vscode에서 작성한 것입니다. 이 내용을 push 하세요.
 이것은 github web에서 수정한 것입니다. 이 내용을 pull 하세요.
+pull 에 성공했습니다. 이제 readme.md를 만들어서 올리세요.
+
+초기세팅
+git config --global --list
+git config --global user.name "깃허브 닉네임"
+git config --global user.email "깃허브 이메일"
+git config --global core.editer "code --wait"
+
+세팅 후, 
+git config --global --list
+
+깃 상태 보기
+git status
+
+(저장->wd) md 파일 추가 (wd -> sa)
+git add .
+
+커밋 (sa-> commit)
+git commit -m "second commit"
+
+커밋 내역 조회 (glt log에서 빠져나올수 없을때  q입력.)
+git log  
+
+로컬 리포지토리 git 으로 리모트 리포지토리에 연결
+git remote add origin 리모트 리포지토리 링크
+git remote rm origin (삭제)
+
+확인
+git remote -v
+
+push하기.
+git push origin master
+
+git , git hub은 왜 필요한가?
+버전관리의 목적. 백업, 복구,협업에 필요하다.
+포트폴리오 관리를 위해 필요하다.
+
+<요약>
+CLI
+touch~ pwd 복습
+마크다운
+git의 3공간 (wd ,sa, commits)
+git 명령어 init~ commit 
+git 원격 저장소 만들고, 로컬과 연결하기.
+원격 저장소 만들고, 로컬과 연결하기.
+push를통해 commit 업로드하기
