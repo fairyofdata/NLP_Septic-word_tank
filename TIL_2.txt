@@ -1,0 +1,21 @@
+# Today I learned day2 (3/18)
+
+git branch: 브랜치 목록 조회
+
+git branch -r : 원격저장소의 브랜치 목록 포함 조회
+
+git branch 브랜치명: 지금까지 master에 쌓인 모든 커밋이 포함된 브랜치
+
+git branch 브랜치명 커밋ID: 커밋 아이디 기준으로 브랜치 생성
+
+git branch -d  : 병합완료된 브랜치 삭제 (D는 병합완료되자 않은것도 삭제)
+
+git switch 브랜치명 : 해당브랜치로 이동
+
+git switch -c 브랜치명: 생성과 이동
+
+git switch -c 브랜치명 커밋ID : 커밋아이디를 기준으로 생성과 이동
+
+git switch master : 마스터 브랜치로 이동
+
+git log --online --all --graph 브랜치 분기 시각적으로 보기.
