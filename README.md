@@ -1,3 +1,2 @@
-readme.md는 원격 저장소의 소개와 설명이 담긴 대문
-반드시 이름을 이걸로 해야 github가 인식합니다.
-이것을 push 해봅시다.
+Today I Learned (by Fairydata)
+2022.03.17 Start
