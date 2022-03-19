@@ -1,4 +1,4 @@
-# Today I learned day2 (3/18) git 특강 - 배지원 강사님
+Today I learned day2 (3/18) git 특강 - 배지원 강사님
 
 git branch: 브랜치 목록 조회
 

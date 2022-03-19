@@ -1,4 +1,4 @@
-# Today I learned day1 (3/17) git 특강 - 배지원 강사님
+Today I learned day1 (3/17) git 특강 - 배지원 강사님
 
 초기세팅
 git config --global --list  
