@@ -8,6 +8,8 @@ git config --global core.editer "code --wait"
 
 git status : 깃 상태 보기
 
+git init : 이 디렉토리를 git 으로 관리하겠다는 명령
+
 git add . 저장(wd)후 sa에 파일 추가 (wd -> sa) (.에 구체적 파일명 입력가능)
 
 git commit -m "커밋메시지" : 커밋 (sa-> commit)
