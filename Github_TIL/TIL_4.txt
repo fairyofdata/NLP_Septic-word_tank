@@ -1,0 +1,26 @@
+1. Git commit 을 할 때 발생하는
+
+error: unable to start editor 'code--wait'
+
+원인: git은 커밋 메시지를 작성하기 위해 기본적으로 시스템에 설치된 텍스트 에디터를 사용합니다. 위의 오류 메시지에서는 "code--wait"라는 에디터를 찾지 못했다는 것을 나타냅니다. 이 문제를 해결하려면 Git의 기본 에디터를 설정해야 합니다.
+
+해결: git config --global core.editor "code --wait" 를 입력하여 Git의 기본 에디터를 설정
+
+
+
+2. git push origin master 시에 발생하는 
+
+error: failed to push some refs to 'https://github.com/fairyofdata/TIL' 
+
+원인: 원격 리포지토리(여기서는 GitHub 리포지토리)에 대해 로컬 브랜치와 원격 브랜치 간에 충돌이 발생했거나, 원격 리포지토리에 로컬에 없는 변경 사항이 있기 때문에 발생한 것. 이러한 상황에서 Git은 변경 사항을 안전하게 푸시할 수 없으므로 오류가 발생
+
+해결: git pull origin master 을 하여 원격 리포지토리(origin)로부터 로컬(master)에 최신 변경 사항 가져오기 > git merge origin/master 로 가져온 사항을 로컬 브랜치에 통합 또는 git rebase origin/master 리베이스 > 다시 git push origin master 시도.
+
+
+
+3. git push origin master는 로컬 master 브랜치의 변경 사항을 origin이라는 원격 리포지토리에 푸시하는 명령어
+
+origin: 이것은 원격 리포지토리의 이름이며, 일반적으로 원격 리포지토리를 가리키는 별명입니다. 
+origin은 일반적으로 원격 리포지토리의 URL을 간단하게 참조하기 위해 사용됩니다.
+
+master: 이것은 로컬 브랜치를 가리킵니다. master는 일반적으로 기본 브랜치 이름 중 하나로, Git 리포지토리를 초기화하면 자동으로 생성되는 브랜치입니다. 로컬 브랜치의 변경 사항을 원격 리포지토리에 푸시하거나 원격 리포지토리로부터 변경 사항을 가져올 때 사용됩니다.

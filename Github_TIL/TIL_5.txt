@@ -1,0 +1,51 @@
+실수로 용량이 매우 큰 파일을 commit 하여서 커밋이 거부되는 오류 해결 
+
+
+오류 상황: 
+
+
+PS C:\Users\stard> cd C:\priv_devs\2306_hufs_dcc_github
+PS C:\priv_devs\2306_hufs_dcc_github> git push origin master
+Enumerating objects: 30, done.
+Counting objects: 100% (30/30), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (30/30), done.
+Writing objects: 100% (30/30), 759.72 MiB | 6.28 MiB/s, done.
+Total 30 (delta 8), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (8/8), done.
+remote: error: Trace: 412bdc26698aed66955525171831a03bbf6b3107ef8f99be52686bdd68b2055c
+remote: error: See https://gh.io/lfs for more information.
+remote: error: File KoBERT_2K_Final-20230825T071306Z-001.zip is 326.23 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: File KoELECTRA_2K-20230825T071305Z-001.zip is 391.56 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+To https://github.com/fairyofdata/DCC_phishing_text_detection
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/fairyofdata/DCC_phishing_text_detection'
+
+
+해결 방법: 해당 디렉토리에서 .git 으로 된 스테이징 되어있는 파일을 제거한 후 다시 커밋을 진행한다. 조사에 따르면 아래와 같이 기존 커밋 중 일부를 리셋하는 방법도 있으나, 두 가지를 동시에 해서 가능했던 것인지, 전자가 확실한 방법인지는 알 수 없다. 
+
+
+PS C:\priv_devs\2306_hufs_dcc_github> git reset HEAD KoBERT_2K_Final-20230825T071306Z-001.zip
+PS C:\priv_devs\2306_hufs_dcc_github> git reset HEAD KoELECTRA_2K-20230825T071305Z-001.zip
+
+
+해결 이후:
+PS C:\priv_devs\2306_hufs_dcc_github> git add .
+PS C:\priv_devs\2306_hufs_dcc_github> git commit -m "adjusted"
+On branch master
+nothing to commit, working tree clean
+PS C:\priv_devs\2306_hufs_dcc_github> git push origin master
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (25/25), done.
+Writing objects: 100% (25/25), 41.72 MiB | 1.10 MiB/s, done.
+Total 25 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/fairyofdata/DCC_phishing_text_detection/pull/new/master
+remote:
+To https://github.com/fairyofdata/DCC_phishing_text_detection
+ * [new branch]      master -> master
